@@ -1,5 +1,3 @@
-
-
 export const ALERT= 'ALERT'
 export const REFETCH_CHATS= 'REFETCH_CHATS'
 export const NEW_ATTACHMENT= 'NEW_ATTACHMENT'

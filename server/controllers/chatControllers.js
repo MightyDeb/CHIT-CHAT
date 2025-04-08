@@ -365,6 +365,7 @@ const getCommunities= async(req,res,next)=>{
     const chats= await Chat.find({
       groupChat: true
     }).populate("creator","name avatar isAdmin")
+    if(chats){
     const filterChats= chats.filter(({creator})=> creator.isAdmin === true)
     const communities= filterChats.map(({_id,name,members,creator})=>{
       return{
@@ -375,6 +376,9 @@ const getCommunities= async(req,res,next)=>{
     return res.status(201).json({
       success: true,
       communities,
+    })}
+    return res.status(402).json({
+      success: false
     })
   } catch (error) {
     next(error)
