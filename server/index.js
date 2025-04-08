@@ -33,7 +33,7 @@ const app= express()
 const server= createServer(app)
 const io= new Server(server, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: ["http://localhost:3000","https://chitchat-e6r22hecw-debapriya-maitys-projects.vercel.app"],
     credentials: true,
     methods: ['GET','POST','PUT','DELETE']
   }
